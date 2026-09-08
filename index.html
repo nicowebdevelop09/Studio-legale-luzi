@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avv. Andrea Luzi | Studio Legale a Como dal 2006</title>
+<meta name="description" content="Studio Legale Avv. Andrea Luzi, Como. Diritto Civile, Penale e Gratuito Patrocinio in tutta la Penisola e Isole. Via Vittorio Emanuele II, 115. Consulenza dal 2006.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1A2B4C;
+    --navy-deep:#12203A;
+    --slate:#F4F5F7;
+    --gold:#C5A059;
+    --gold-deep:#A9843F;
+    --ink:#22242B;
+    --ink-soft:#5B5F6B;
+    --paper:#FFFFFF;
+    --hairline: rgba(26,43,76,0.14);
+    --radius: 2px;
+    --maxw: 1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Lora',serif;
+    color:var(--navy);
+    line-height:1.25;
+    margin:0 0 .5em;
+    font-weight:600;
+  }
+  p{margin:0 0 1em; color:var(--ink-soft); max-width:62ch;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px;}
+  
+  section{padding:64px 0; scroll-margin-top: 140px;}
+  @media(min-width:900px){ section{scroll-margin-top: 90px;} }
+
+  /* Skip link */
+  .skip-link{position:absolute; left:-999px; top:auto;}
+  .skip-link:focus{left:12px; top:12px; background:var(--gold); color:var(--navy-deep); padding:10px 16px; z-index:999; font-weight:600;}
+
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+
+  /* Top bar */
+  .topbar{
+    background:var(--navy-deep);
+    color:#EDEFF3;
+    font-size:13.5px;
+  }
+  .topbar .wrap{display:flex; justify-content:space-between; align-items:center; padding-top:9px; padding-bottom:9px; gap:12px; flex-wrap:wrap;}
+  .topbar a{text-decoration:none; color:#D9DEE8;}
+  .topbar a:hover{color:var(--gold);}
+
+  /* Header e Navigazione a Pulsanti */
+  header.site{
+    background:var(--paper);
+    border-bottom:1px solid var(--hairline);
+    position:sticky; top:0; z-index:40;
+  }
+  .header-main {
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{
+    font-family:'Lora',serif; font-weight:600; font-size:1.28rem; color:var(--navy);
+    text-decoration:none; letter-spacing:.2px;
+  }
+  .brand span{display:block; font-family:'Inter',sans-serif; font-weight:500; font-size:.68rem; color:var(--ink-soft); margin-top:2px;}
+  
+  nav.primary {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 14px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav.primary::-webkit-scrollbar { display: none; }
+  
+  nav.primary a {
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--slate);
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--hairline);
+    transition: all 0.2s ease;
+  }
+  nav.primary a:hover, nav.primary a:active {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border-color: var(--gold-deep);
+  }
+
+  .btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-deep);
+    font-weight:700;
+    text-decoration:none;
+    padding:13px 24px;
+    border:1px solid var(--gold-deep);
+    border-radius:var(--radius);
+    font-size:.95rem;
+    cursor:pointer;
+  }
+  .btn:hover{background:var(--gold-deep); color:#fff;}
+  .btn-ghost{
+    display:inline-block;
+    background:transparent;
+    color:var(--paper);
+    border:1px solid rgba(255,255,255,.55);
+    padding:12px 22px;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:var(--radius);
+    font-size:.92rem;
+  }
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+  .header-cta{display:none;}
+  
+  @media(min-width:900px){
+    .header-flex {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-main { padding-bottom: 16px; }
+    .header-cta{display:inline-block;}
+    
+    nav.primary {
+      padding-bottom: 0; gap: 28px; overflow: visible;
+    }
+    nav.primary a {
+      background: transparent; border: none; border-radius: 0; padding: 0; padding-bottom: 4px;
+      font-size: .95rem; font-weight: 500; color: var(--ink); border-bottom: 2px solid transparent;
+    }
+    nav.primary a:hover {
+      background: transparent; color: var(--navy); border-bottom: 2px solid var(--gold);
+    }
+  }
+
+  /* Hero */
+  .hero{
+    background:var(--navy);
+    color:#EDEFF3;
+    position:relative;
+    overflow:hidden;
+    padding:56px 0 72px;
+  }
+  .hero .wrap{position:relative; z-index:2;}
+  .hero-grid{display:grid; gap:36px;}
+  @media(min-width:960px){.hero-grid{grid-template-columns:1.1fr .9fr; align-items:center;}}
+  .kicker{
+    color:var(--gold);
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.05rem;
+    margin-bottom:14px;
+  }
+  .hero h1{color:#fff; font-size:2.15rem; max-width:15ch;}
+  @media(min-width:640px){.hero h1{font-size:2.7rem;}}
+  .hero p.lead{color:#C9D0DE; font-size:1.08rem; max-width:46ch;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:26px;}
+  .hero-illustration{opacity:.95;}
+  .hero-illustration svg{width:100%; height:auto;}
+
+  .hero-stats{
+    display:flex; gap:0; margin-top:44px; border-top:1px solid rgba(255,255,255,.18); padding-top:22px; flex-wrap:wrap;
+  }
+  .hero-stats div{padding-right:34px; margin-right:34px; border-right:1px solid rgba(255,255,255,.18);}
+  .hero-stats div:last-child{border-right:none;}
+  .hero-stats strong{display:block; font-family:'Lora',serif; font-size:1.7rem; color:var(--gold);}
+  .hero-stats span{font-size:.83rem; color:#B9C1D2;}
+
+  /* Section headings */
+  .section-head{max-width:56ch; margin-bottom:40px;}
+  .section-head h2{font-size:1.75rem;}
+  .eyebrow-line{
+    display:flex; align-items:center; gap:12px; margin-bottom:14px; color:var(--gold-deep); font-weight:600; font-size:.85rem;
+  }
+  .eyebrow-line::before{content:""; width:26px; height:2px; background:var(--gold);}
+
+  .bg-slate{background:var(--slate);}
+
+  /* Expertise */
+  .expertise-list{
+    display:grid; gap:0; border-top:1px solid var(--hairline);
+  }
+  .expertise-item{
+    display:grid; gap:6px; padding:26px 0; border-bottom:1px solid var(--hairline);
+    grid-template-columns:1fr;
+  }
+  @media(min-width:760px){
+    .expertise-item{grid-template-columns:220px 1fr; align-items:start; gap:28px;}
+  }
+  .expertise-item h3{
+    font-size:1.18rem; margin:0; display:flex; gap:14px; align-items:flex-start;
+    border-left:3px solid var(--gold); padding-left:14px;
+  }
+  .expertise-item .desc p{margin:0;}
+
+  /* Gratuito Patrocinio callout */
+  .patrocinio{
+    background:var(--navy);
+    color:#EDEFF3;
+    padding:44px;
+    display:grid; gap:26px;
+  }
+  @media(min-width:860px){.patrocinio{grid-template-columns:1.3fr .8fr; padding:56px;}}
+  .patrocinio h2{color:#fff;}
+  .patrocinio p{color:#C9D0DE;}
+  .patrocinio ul{color:#C9D0DE; padding-left:20px; margin:0 0 20px;}
+  .patrocinio ul li{margin-bottom:8px;}
+  .patrocinio-panel{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.18);
+    padding:26px;
+  }
+  .patrocinio-panel h3{color:var(--gold); font-size:1.05rem;}
+  .patrocinio-panel p{color:#D9DEE8; font-size:.92rem;}
+
+  /* Credibility badges */
+  .badges{
+    display:grid; gap:18px; grid-template-columns:1fr; margin-top:10px;
+  }
+  @media(min-width:760px){.badges{grid-template-columns:repeat(3,1fr);}}
+  .badge{
+    border:1px solid var(--hairline);
+    padding:24px;
+    background:var(--paper);
+  }
+  .badge .badge-icon{
+    width:38px; height:38px; margin-bottom:14px; color:var(--gold-deep);
+  }
+  .badge h3{font-size:1rem; margin-bottom:6px;}
+  .badge p{font-size:.9rem; margin:0;}
+
+  /* Map / location */
+  .location-grid{display:grid; gap:32px;}
+  @media(min-width:900px){.location-grid{grid-template-columns:.9fr 1.1fr;}}
+  .map-frame{border:1px solid var(--hairline); overflow:hidden; height:340px;}
+  .map-frame iframe{width:100%; height:100%; border:0;}
+  .location-detail dl{margin:0; display:grid; gap:16px;}
+  .location-detail dt{font-weight:700; color:var(--navy); font-size:.85rem;}
+  .location-detail dd{margin:2px 0 0; color:var(--ink-soft);}
+
+  /* Contact / form */
+  .contact-grid{display:grid; gap:40px;}
+  @media(min-width:900px){.contact-grid{grid-template-columns:.85fr 1.15fr;}}
+  .direct-links{display:grid; gap:14px; margin-top:22px;}
+  .direct-links a{
+    display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--navy);
+    border:1px solid var(--hairline); padding:14px 16px; font-weight:600; font-size:.95rem;
+  }
+  .direct-links a:hover{border-color:var(--gold-deep);}
+  form{display:grid; gap:16px;}
+  .field{display:grid; gap:6px;}
+  label{font-size:.85rem; font-weight:600; color:var(--navy);}
+  input,select,textarea{
+    font-family:'Inter',sans-serif; font-size:.98rem; padding:12px 14px;
+    border:1px solid var(--hairline); background:var(--paper); color:var(--ink);
+  }
+  textarea{resize:vertical; min-height:110px;}
+  input:focus,select:focus,textarea:focus{border-color:var(--gold-deep);}
+  .consent{display:flex; gap:10px; align-items:flex-start; font-size:.85rem; color:var(--ink-soft);}
+  .consent input{margin-top:3px;}
+  .form-note{font-size:.8rem; color:var(--ink-soft); margin-top:4px;}
+
+  /* Footer */
+  footer{background:var(--navy-deep); color:#C9D0DE; padding:48px 0; max-width: 100%;}
+  @media(min-width:760px){footer{padding-bottom:48px;}}
+  .footer-grid{display:grid; gap:28px;}
+  @media(min-width:760px){.footer-grid{grid-template-columns:1.2fr 1fr 1fr;}}
+  footer h3{color:#fff; font-size:.95rem; font-family:'Inter',sans-serif; font-weight:700; margin-bottom:12px;}
+  footer p, footer a{color:#AEB6C7; font-size:.88rem; text-decoration:none;}
+  footer a:hover{color:var(--gold);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12); margin-top:32px; padding-top:18px;
+    font-size:.78rem; color:#8A93A6; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  /* Sticky mobile action bar - Semplificato con un unico pulsante pieno */
+  .mobile-bar{
+    position:fixed; bottom:0; left:0; right:0; z-index:50;
+    display:flex; background:var(--navy-deep);
+    border-top:1px solid rgba(255,255,255,.14);
+  }
+  @media(min-width:760px){.mobile-bar{display:none;}}
+  .mobile-bar a{
+    flex:1; text-align:center; padding:14px 6px; color:var(--navy-deep); background:var(--gold); text-decoration:none;
+    font-size:.9rem; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px;
+  }
+  .mobile-bar svg{width:18px; height:18px;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Ordine degli Avvocati di Como &middot; Iscritto dal 19/06/2006</span>
+    <a href="mailto:avvocatoluziandrea@gmail.com">avvocatoluziandrea@gmail.com</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap header-flex">
+    <div class="header-main">
+      <a class="brand" href="#main">Avv. Andrea Luzi<span>Studio Legale &middot; Como</span></a>
+      <a class="btn header-cta" href="tel:+39031489380">031 489 3280</a>
+    </div>
+    <nav class="primary" aria-label="Sezioni del sito">
+      <a href="#competenze">Aree di attivit&agrave;</a>
+      <a href="#patrocinio">Gratuito Patrocinio</a>
+      <a href="#studio">Lo Studio</a>
+      <a href="#dove">Dove siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Assistenza e difesa legale in tutta la Penisola e Isole</div>
+        <h1>Al vostro fianco nelle questioni legali dal 2006</h1>
+        <p class="lead">Consulenza e assistenza in Diritto Civile, Penale e Gratuito Patrocinio per chi ha diritto alla difesa a spese dello Stato su tutto il territorio nazionale.</p>
+        <div class="hero-actions">
+          <a class="btn" href="tel:+39031489380">Chiama lo Studio</a>
+          <a class="btn-ghost" href="#contatti">Scrivi una richiesta</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>2006</strong><span>Anno di iscrizione all&rsquo;Albo</span></div>
+          <div><strong>Como</strong><span>Via Vittorio Emanuele II, 115</span></div>
+          <div><strong>3</strong><span>Aree di competenza principali</span></div>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="150" width="360" height="200" fill="none" stroke="#C5A059" stroke-width="1.4"/>
+          <line x1="30" y1="150" x2="210" y2="40" stroke="#C5A059" stroke-width="1.4"/>
+          <line x1="210" y1="40" x2="390" y2="150" stroke="#C5A059" stroke-width="1.4"/>
+          <line x1="30" y1="150" x2="390" y2="150" stroke="#C5A059" stroke-width="1.4"/>
+          <g stroke="#8194B8" stroke-width="1.2">
+            <line x1="62" y1="150" x2="62" y2="330"/>
+            <line x1="104" y1="150" x2="104" y2="330"/>
+            <line x1="146" y1="150" x2="146" y2="330"/>
+            <line x1="188" y1="150" x2="188" y2="330"/>
+            <line x1="230" y1="150" x2="230" y2="330"/>
+            <line x1="272" y1="150" x2="272" y2="330"/>
+            <line x1="314" y1="150" x2="314" y2="330"/>
+            <line x1="356" y1="150" x2="356" y2="330"/>
+          </g>
+          <rect x="30" y="330" width="360" height="14" fill="#C5A059" opacity="0.85"/>
+          <circle cx="210" cy="95" r="15" fill="none" stroke="#C5A059" stroke-width="1.4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="competenze">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-line">Aree di attivit&agrave;</div>
+        <h2>Competenza specializzata, seguita personalmente</h2>
+        <p>Ogni pratica &egrave; seguita direttamente dall&rsquo;Avvocato, dal primo colloquio fino alla conclusione del procedimento.</p>
+      </div>
+
+      <div class="expertise-list">
+        <div class="expertise-item">
+          <h3>Diritto Civile &amp; Volontaria Giurisdizione</h3>
+          <div class="desc">
+            <p>Contratti, responsabilit&agrave; civile, diritto di famiglia, successioni, locazioni e procedimenti di volontaria giurisdizione in tutto il territorio nazionale.</p>
+          </div>
+        </div>
+        <div class="expertise-item">
+          <h3>Diritto Penale</h3>
+          <div class="desc">
+            <p>Difesa nelle fasi di indagine, udienza preliminare e dibattimento, assistenza a persone offese e imputati, misure cautelari.</p>
+          </div>
+        </div>
+        <div class="expertise-item">
+          <h3>Gratuito Patrocinio</h3>
+          <div class="desc">
+            <p>Assistenza legale a spese dello Stato per chi ha un reddito entro le soglie di legge. Verifica dei requisiti e istruzione della pratica.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate" id="patrocinio">
+    <div class="wrap">
+      <div class="patrocinio">
+        <div>
+          <div class="eyebrow-line" style="color:var(--gold);">Diritto alla difesa</div>
+          <h2>Patrocinio a Spese dello Stato</h2>
+          <p>Chi ha un reddito annuo imponibile entro la soglia stabilita per legge pu&ograve; accedere alla difesa legale gratuita, con i costi anticipati dallo Stato. Lo Studio verifica i requisiti e prepara la documentazione necessaria.</p>
+          <ul>
+            <li>Verifica preliminare del limite di reddito</li>
+            <li>Raccolta e predisposizione della documentazione ISEE</li>
+            <li>Presentazione dell&rsquo;istanza al Consiglio dell&rsquo;Ordine</li>
+            <li>Assistenza per l&rsquo;intera durata del procedimento</li>
+          </ul>
+          <a class="btn" href="#contatti">Verifica se hai diritto</a>
+        </div>
+        <div class="patrocinio-panel">
+          <h3>Guida ai requisiti</h3>
+          <p>Una scheda sintetica con le soglie di reddito aggiornate e i documenti da preparare per la richiesta, disponibile su richiesta presso lo Studio o via email.</p>
+          <p class="form-note" style="color:#9AA4B8;">Documento informativo &mdash; contenuto da confermare con l&rsquo;Avvocato prima della pubblicazione.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-line">Credibilit&agrave; e garanzie</div>
+        <h2>Uno Studio riconosciuto e assicurato</h2>
+      </div>
+      <div class="badges">
+        <div class="badge">
+          <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 3 6v2h18V6l-9-4Z"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8"/><path d="M3 21h18"/></svg>
+          <h3>Ordine degli Avvocati di Como</h3>
+          <p>Avvocato iscritto all&rsquo;Albo dal 19/06/2006, in regola con la formazione professionale continua.</p>
+        </div>
+        <div class="badge">
+          <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+          <h3>Oltre 20 anni di attivit&agrave;</h3>
+          <p>Esperienza continuativa dal 2006 nella tutela di clienti privati e aziendali in tutta la Penisola e Isole.</p>
+        </div>
+        <div class="badge">
+          <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 4 6v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V6l-8-3Z"/></svg>
+          <h3>Copertura assicurativa</h3>
+          <p>Polizza di responsabilit&agrave; civile professionale con Tokio Marine HCC, a garanzia dell&rsquo;attivit&agrave; svolta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate" id="dove">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-line">Come raggiungerci</div>
+        <h2>Lo Studio in Via Vittorio Emanuele II</h2>
+      </div>
+      <div class="location-grid">
+        <div class="map-frame">
+          <iframe 
+            src="https://maps.google.com/maps?q=Via%20Vittorio%20Emanuele%20II%20115%2022100%20Como&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            title="Mappa dello Studio Legale Avv. Andrea Luzi, Via Vittorio Emanuele II 115, Como"
+            loading="lazy"></iframe>
+        </div>
+        <div class="location-detail">
+          <dl>
+            <div><dt>Indirizzo</dt><dd>Via Vittorio Emanuele II, 115 &mdash; 22100 Como (CO)</dd></div>
+            <div><dt>Telefono Studio</dt><dd><a href="tel:+39031489380">031 489 3280</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:avvocatoluziandrea@gmail.com">avvocatoluziandrea@gmail.com</a></dd></div>
+            <div><dt>Orario di ricevimento</dt><dd>Su appuntamento, dal luned&igrave; al venerd&igrave;</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow-line">Richiedi una consulenza</div>
+        <h2>Scrivici in tutta riservatezza</h2>
+        <p>Descrivi brevemente la tua situazione: riceverai una risposta per valutare insieme i prossimi passi, compresa l&rsquo;eventuale idoneit&agrave; al Gratuito Patrocinio.</p>
+        <div class="direct-links">
+          <a href="mailto:avvocatoluziandrea@gmail.com">Email &mdash; avvocatoluziandrea@gmail.com</a>
+          <a href="tel:+39031489380">Telefono Studio &mdash; 031 489 3280</a>
+        </div>
+        <p class="form-note">Per comunicazioni ufficiali &egrave; disponibile un indirizzo PEC: dettagli forniti su richiesta per garantirne la verifica.</p>
+      </div>
+      <div>
+        <form aria-label="Modulo di contatto riservato">
+          <div class="field">
+            <label for="nome">Nome e Cognome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="area">Area di intervento</label>
+            <select id="area" name="area" required>
+              <option value="">Seleziona&hellip;</option>
+              <option>Diritto Civile</option>
+              <option>Diritto Penale</option>
+              <option>Gratuito Patrocinio</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="descrizione">Descrizione sintetica del caso</label>
+            <textarea id="descrizione" name="descrizione" required></textarea>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="consenso" name="consenso" required>
+            <label for="consenso" style="font-weight:400;">Autorizzo il trattamento dei dati, anche relativi alla mia situazione legale, ai sensi del Regolamento UE 2016/679 (GDPR), per essere ricontattato dallo Studio.</label>
+          </div>
+          <button type="submit" class="btn">Invia richiesta riservata</button>
+          <p class="form-note">Questo modulo non &egrave; ancora collegato a un servizio di invio: da configurare con un indirizzo email o CRM prima della pubblicazione.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <h3>Avv. Andrea Luzi</h3>
+      <p>Via Vittorio Emanuele II, 115<br>22100 Como (CO)<br>Iscritto all&rsquo;Ordine degli Avvocati di Como dal 19/06/2006</p>
+    </div>
+    <div>
+      <h3>Contatti</h3>
+      <p><a href="tel:+39031489380">031 489 3280</a></p>
+      <p><a href="mailto:avvocatoluziandrea@gmail.com">avvocatoluziandrea@gmail.com</a></p>
+    </div>
+    <div>
+      <h3>Aree di attivit&agrave;</h3>
+      <p><a href="#competenze">Diritto Civile</a></p>
+      <p><a href="#competenze">Diritto Penale</a></p>
+      <p><a href="#patrocinio">Gratuito Patrocinio</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; <span id="year"></span> Avv. Andrea Luzi &mdash; Tutti i diritti riservati</span>
+    <span>P.IVA da inserire &middot; Privacy Policy da pubblicare</span>
+  </div>
+</footer>
+
+<nav class="mobile-bar" aria-label="Contatti rapidi">
+  <a href="tel:+39031489380">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Chiama lo Studio &middot; 031 489 3280
+  </a>
+</nav>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
